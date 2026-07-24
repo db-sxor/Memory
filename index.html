@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>행복했던, 행복한, 행복할</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 배경음악 토글 버튼 -->
+  <audio id="bgm" src="audio/song.mp3" loop></audio>
+  <button id="musicToggle" class="music-toggle" aria-label="음악 재생/정지">
+    <span class="music-icon">♪</span>
+  </button>
+
+  <!-- ===== 1. HERO ===== -->
+  <header class="hero">
+    <div class="hero-tape"></div>
+    <p class="hero-eyebrow">2018 — 2026, 6년의 기록</p>
+    <h1 class="hero-title">우리, 6년</h1>
+    <p class="hero-subtitle">차진주 · 송현채 부부와 함께한 날을 기억하며</p>
+    <p class="hero-desc">
+      함께했던 시간들, 잊지 않으려고 이 페이지를 만들었어요<br>
+      보고 싶을 때마다 여기 들어와서 다시 꺼내보길 바라며
+    </p>
+    <a href="#gallery" class="hero-scroll" id="scrollBtn">아래로 ↓</a>
+  </header>
+
+  <!-- ===== 2. 타임라인 ===== -->
+  <section class="timeline" id="timeline">
+    <h2 class="section-title">6년의 기록</h2>
+    <div class="timeline-track">
+      <div class="timeline-item">
+        <span class="timeline-year">2018</span>
+        <p class="timeline-text">처음 만난 날 — 짧은 설명을 여기에</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2021</span>
+        <p class="timeline-text">기억에 남는 에피소드를 여기에</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <p class="timeline-text">떠나는 날, 그리고 마지막 모임</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. 사진 및 영상 갤러리 ===== -->
+  <section class="gallery" id="gallery">
+    <h2 class="section-title">우리가 함께한 순간들</h2>
+    <p class="section-desc">사진이나 영상을 클릭하면 크게 볼 수 있어요</p>
+    <div class="gallery-grid" id="galleryGrid">
+      <figure class="photo-card"><img src="images/1_250506.jpg" alt="사진 1" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/2_250506.JPG" alt="사진 2" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/3_250506.JPG" alt="사진 3" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/4_250506.JPG" alt="사진 4" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/5_250507.jpg" alt="사진 5" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/6_250507.JPG" alt="사진 6" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/7_250507.JPG" alt="사진 7" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/8_250507.JPG" alt="사진 8" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/9_250507.JPG" alt="사진 9" loading="lazy"></figure>
+      
+      <!-- 동영상 파일 (MP4) -->
+      <figure class="photo-card">
+        <video src="images/9-1_250507.MP4" autoplay muted loop playsinline></video>
+      </figure>
+      <figure class="photo-card">
+        <video src="images/10_250507.MP4" autoplay muted loop playsinline></video>
+      </figure>
+
+      <figure class="photo-card"><img src="images/11_250508.JPG" alt="사진 12" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/12_250508.JPG" alt="사진 13" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/13_260110.jpg" alt="사진 14" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/14_260117.JPG" alt="사진 15" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/15_260117.JPG" alt="사진 16" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/16_260117.JPG" alt="사진 17" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/17_260117.jpg" alt="사진 18" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/18_260117.JPG" alt="사진 19" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/19_260221.JPG" alt="사진 20" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/20_260110.JPG" alt="사진 21" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/21_260222.JPG" alt="사진 22" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- 라이트박스 (사진 및 영상 확대용) -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="닫기">×</button>
+    <img src="" alt="" id="lightboxImg" style="display: none;">
+    <video src="" id="lightboxVideo" controls style="display: none;"></video>
+  </div>
+
+  <!-- ===== 4. 메시지 모음 ===== -->
+  <section class="messages" id="messages">
+    <h2 class="section-title">우리들의 한마디</h2>
+    <p class="section-desc">함께했던 사람들이 남긴 짧은 인사</p>
+    <div class="message-wall" id="messageWall"></div>
+  </section>
+
+  <!-- ===== 5. FOOTER ===== -->
+  <footer class="site-footer">
+    <p>늘 그리울 거예요. 언제든 다시 만나요.</p>
+    <p class="footer-signature">— 서부수어회중 형제자매 모두의 마음을 담아</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
