@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== 1. 메시지 데이터 & 카드 생성 =====
   const messages = [
     { name: "○○○", text: "여기에 메시지를 입력하세요." },
     { name: "○○○", text: "여기에 메시지를 입력하세요." },
     { name: "○○○", text: "여기에 메시지를 입력하세요." },
-    // 필요한 만큼 계속 추가하면 됩니다
   ];
 
   function renderMessages() {
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   renderMessages();
 
-  // ===== 2. 천천히 부드럽게 스크롤 이동 (아래로 ↓ 버튼 클릭 시) =====
+  // ===== 2. 아래로 버튼 클릭 시 스크롤 이동 =====
   const scrollBtn = document.getElementById("scrollBtn");
   if (scrollBtn) {
     scrollBtn.addEventListener("click", (e) => {
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
       const startPosition = window.pageYOffset;
       const distance = targetPosition - startPosition;
-      const duration = 1200; // 이동 시간 (1200ms = 1.2초)
+      const duration = 1200;
       let start = null;
 
       function step(timestamp) {
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bgm = document.getElementById("bgm");
   const musicToggle = document.getElementById("musicToggle");
 
-  // 🎵 5개의 음악 파일 경로 목록
+  // 플레이리스트
   const playlist = [
     "audio/song1.mp3",
     "audio/song2.mp3",
@@ -68,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentSongIndex = -1;
 
-  // 랜덤으로 노래를 선택하는 함수 (바로 직전에 나온 노래는 연속으로 나오지 않게 처리)
+  // 노래 랜덤재생 함수, 중복X
   function setRandomSong() {
     let newIndex;
     do {
@@ -80,11 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
       bgm.src = playlist[currentSongIndex];
     }
   }
-
-  // 처음 페이지 로드 시 첫 랜덤 곡 세팅
   setRandomSong();
 
-  // 노래 한 곡이 끝나면 다음 곡을 자동으로 랜덤 선택해서 계속 재생
+  // 노래 끝나면 다음 곡 랜덤재생
   if (bgm) {
     bgm.addEventListener("ended", () => {
       setRandomSong();
@@ -96,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (bgm && musicToggle) {
     musicToggle.addEventListener("click", () => {
       if (bgm.paused) {
-        // 음원이 안 적혀있으면 랜덤 곡 지정
         if (!bgm.src) setRandomSong();
         
         bgm.play();
@@ -108,14 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== 4. 라이트박스 (사진 & 동영상 클릭 시 확대) =====
+  // ===== 4. 라이트박스 =====
   const galleryGrid = document.getElementById("galleryGrid");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
   const lightboxVideo = document.getElementById("lightboxVideo");
   const lightboxClose = document.getElementById("lightboxClose");
 
-  // 동영상 열람 시 BGM 일시정지 상태를 기억하기 위한 변수
+  // 동영상 열람 시 노래 일시정지 상태 기억 변수
   let wasBgmPlayingBeforeVideo = false;
 
   if (galleryGrid && lightbox) {
@@ -138,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (video) {
         if (lightboxImg) lightboxImg.style.display = "none";
 
-        // 동영상 열기 전, 배경음악이 켜져 있었는지 확인 및 일시정지
+        // 동영상 열기 전 배경음악이 켜져 있었는지 확인 및 일시정지
         if (bgm && !bgm.paused) {
           wasBgmPlayingBeforeVideo = true;
           bgm.pause();
@@ -150,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (lightboxVideo) {
           lightboxVideo.src = video.src;
           lightboxVideo.style.display = "block";
-          lightboxVideo.play(); // 동영상 소리 포함 재생
+          lightboxVideo.play();
         }
         lightbox.classList.add("active");
       }
@@ -166,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lightboxVideo.src = "";
       }
 
-      // 동영상 열기 전에 BGM이 켜져 있었다면 다시 재생
+      // 동영상 열기 전 노래 켜져 있었으면 다시 재생
       if (wasBgmPlayingBeforeVideo && bgm) {
         bgm.play();
         if (musicToggle) musicToggle.classList.add("playing");

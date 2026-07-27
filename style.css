@@ -1,8 +1,3 @@
-/* =========================================================
-   토큰
-   색: 종이 크림 #F4EFE4 / 잉크 딥틸 #2C4A46 / 로즈 #C97064 / 머스타드 #D9A441 / 잉크 블랙 #262421
-   글꼴: 제목 Gowun Batang(손글씨 같은 세리프) / 본문 Noto Sans KR
-========================================================= */
 :root {
   --paper: #F4EFE4;
   --paper-deep: #EAE2D0;
@@ -21,7 +16,6 @@ body {
   color: var(--text);
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.7;
-  /* 종이 질감: 은은한 노이즈 그라디언트 */
   background-image:
     radial-gradient(circle at 20% 20%, rgba(0,0,0,0.02) 0%, transparent 40%),
     radial-gradient(circle at 80% 60%, rgba(0,0,0,0.02) 0%, transparent 40%);
@@ -151,35 +145,32 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
   display: block;
 }
 
-/* 동영상이 카드 안에서 사진처럼 깔끔하게 차도록 스타일 보정 */
-  .photo-card video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
-  }
+.photo-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
 
-  .photo-card:nth-last-child(2),
-  .photo-card:nth-last-child(1) {
-    grid-column: span 2 !important; /* 4열 중 2열(50%)을 차지 */
-  }
+.photo-card:nth-last-child(2),
+.photo-card:nth-last-child(1) {
+  grid-column: span 2 !important;
+}
 
-  /* 마지막 2장의 이미지/동영상 비율도 더 크게 보기 좋게 조절 */
-  .photo-card:nth-last-child(2) img,
-  .photo-card:nth-last-child(1) img,
-  .photo-card:nth-last-child(2) video,
-  .photo-card:nth-last-child(1) video {
-    aspect-ratio: 4/3; /* 큰 카드에 맞춰 가로형 비율로 표시 */
-  }
+.photo-card:nth-last-child(2) img,
+.photo-card:nth-last-child(1) img,
+.photo-card:nth-last-child(2) video,
+.photo-card:nth-last-child(1) video {
+  aspect-ratio: 4/3;
+}
 
-  /* 라이트박스 내 비디오 스타일 */
-  .lightbox video {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 8px;
-    outline: none;
-  }
+.lightbox video {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  outline: none;
+}
 
 /* ===== LIGHTBOX ===== */
 .lightbox {
@@ -260,9 +251,9 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
 .music-tooltip {
   position: absolute;
   bottom: 130%; 
-  right: 0;               /* 오른쪽 끝 기준으로 정렬 (밖으로 나가는 현상 방지) */
-  left: auto;             /* 기존 중앙 정렬 해제 */
-  transform: none;        /* 기존 중앙 정렬 해제 */
+  right: 0;
+  left: auto;
+  transform: none;
   
   background-color: #222222;
   color: #ffffff;
@@ -281,20 +272,18 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
   z-index: 10;
 }
 
-/* 꼬리표 위치: 오른쪽 밑으로 이동 */
 .music-tooltip::after {
   content: "";
   position: absolute;
   top: 100%;
-  right: 15px;            /* 오른쪽 끝에서 15px 안쪽에 꼬리표 배치 */
-  left: auto;             /* 기존 중앙 정렬 해제 */
-  transform: none;        /* 기존 중앙 정렬 해제 */
+  right: 15px;
+  left: auto;
+  transform: none;
   border-width: 8px;
   border-style: solid;
   border-color: #222222 transparent transparent transparent;
 }
 
-/* 3초 후 사라짐 클래스 */
 .music-tooltip.fade-out {
   opacity: 0;
   transform: translateY(6px);
