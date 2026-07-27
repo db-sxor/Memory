@@ -136,6 +136,7 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
   transform: rotate(0deg);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  aspect-ratio: 4/3;
 }
 .photo-card:nth-child(odd) { transform: rotate(-1.5deg); }
 .photo-card:nth-child(even) { transform: rotate(1.5deg); }
@@ -158,6 +159,20 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
     display: block;
     cursor: pointer;
   }
+
+  .photo-card:nth-last-child(2),
+  .photo-card:nth-last-child(1) {
+    grid-column: span 2 !important; /* 4열 중 2열(50%)을 차지 */
+  }
+
+  /* 마지막 2장의 이미지/동영상 비율도 더 크게 보기 좋게 조절 */
+  .photo-card:nth-last-child(2) img,
+  .photo-card:nth-last-child(1) img,
+  .photo-card:nth-last-child(2) video,
+  .photo-card:nth-last-child(1) video {
+    aspect-ratio: 4/3; /* 큰 카드에 맞춰 가로형 비율로 표시 */
+  }
+
   /* 라이트박스 내 비디오 스타일 */
   .lightbox video {
     max-width: 90%;

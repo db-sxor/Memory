@@ -11,7 +11,7 @@
 <body>
 
   <!-- 배경음악 토글 버튼 -->
-  <audio id="bgm" src="audio/song.mp3" loop></audio>
+  <audio id="bgm"></audio>
   <button id="musicToggle" class="music-toggle" aria-label="음악 재생/정지">
     <div id="musicTooltip" class="music-tooltip">
       버튼을 눌러 음악을 틀 수 있어요!
@@ -56,35 +56,68 @@
     <h2 class="section-title">우리가 함께한 순간들</h2>
     <p class="section-desc">사진이나 영상을 클릭하면 크게 볼 수 있어요</p>
     <div class="gallery-grid" id="galleryGrid">
-      <figure class="photo-card"><img src="images/1_250506.JPG" alt="사진 1" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/2_250506.JPG" alt="사진 2" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/3_250506.JPG" alt="사진 3" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/4_250506.JPG" alt="사진 4" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/5_250507.jpg" alt="사진 5" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/6_250507.JPG" alt="사진 6" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/7_250507.JPG" alt="사진 7" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/8_250507.JPG" alt="사진 8" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/9_250507.JPG" alt="사진 9" loading="lazy"></figure>
-      
-      <!-- 동영상 파일 (MP4) -->
-      <figure class="photo-card">
-        <video src="images/9-1_250507.MP4" autoplay muted loop playsinline></video>
-      </figure>
-      <figure class="photo-card">
-        <video src="images/10_250507.MP4" autoplay muted loop playsinline></video>
-      </figure>
-
-      <figure class="photo-card"><img src="images/11_250508.JPG" alt="사진 12" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/12_250508.JPG" alt="사진 13" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/13_260110.jpg" alt="사진 14" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/14_260117.JPG" alt="사진 15" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/15_260117.JPG" alt="사진 16" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/16_260117.JPG" alt="사진 17" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/17_260117.jpg" alt="사진 18" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/18_260117.JPG" alt="사진 19" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/19_260221.JPG" alt="사진 20" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/20_260110.JPG" alt="사진 21" loading="lazy"></figure>
-      <figure class="photo-card"><img src="images/21_260222.JPG" alt="사진 22" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/A_230117.jpg" alt="사진 1" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/B_230614.jpg" alt="사진 2" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/C_230910.jpg" alt="사진 3" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/D_240211.jpg" alt="사진 4" loading="lazy"></figure>
+      <figure class="photo-card"><video src="images/E_240719.mp4" autoplay muted loop playsinline></video></figure>
+      <figure class="photo-card"><video src="images/F_240823.mp4" autoplay muted loop playsinline></video></figure>
+      <figure class="photo-card"><img src="images/G_240907.jpg" alt="사진 5" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/H_250206_1.jpg" alt="사진 6" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/I_250206_2.jpg" alt="사진 7" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/J_250206_3.jpg" alt="사진 8" loading="lazy"></figure>
+      <figure class="photo-card"><video src="images/K_250222_1.mp4" autoplay muted loop playsinline></video></figure>
+      <figure class="photo-card"><img src="images/L_250222_2.jpg" alt="사진 9" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/M_250329_1.jpg" alt="사진 10" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/N_250329_2.jpg" alt="사진 11" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/O_250329_3.jpg" alt="사진 12" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/P_250329_4.jpg" alt="사진 13" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/1_250506.JPG" alt="사진 14" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/2_250506.JPG" alt="사진 15" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/3_250506.JPG" alt="사진 16" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/4_250506.JPG" alt="사진 17" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/5_250507.jpg" alt="사진 18" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/6_250507.JPG" alt="사진 19" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/7_250507.JPG" alt="사진 20" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/8_250507.JPG" alt="사진 21" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/9_250507.JPG" alt="사진 22" loading="lazy"></figure>
+      <figure class="photo-card"><video src="images/9-1_250507.MP4" autoplay muted loop playsinline></video></figure>
+      <figure class="photo-card"><video src="images/10_250507.MP4" autoplay muted loop playsinline></video></figure>
+      <figure class="photo-card"><img src="images/11_250508.JPG" alt="사진 23" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/12_250508.JPG" alt="사진 24" loading="lazy"></figure>
+      <figure class="photo-card"><video src="images/Q_250601_1.mp4" autoplay muted loop playsinline></video></figure>
+      <figure class="photo-card"><img src="images/R_251019.jpg" alt="사진 25" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/S_251102_1.jpg" alt="사진 26" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/T_251102_2.jpg" alt="사진 27" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/U_251102_3.jpg" alt="사진 28" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/V_251102_4.jpg" alt="사진 29" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/W_251102_5.jpg" alt="사진 30" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/X_251102_6.jpg" alt="사진 31" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/Y_251102_7.jpg" alt="사진 32" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/Z_251102_8.jpg" alt="사진 33" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/A1_251115.jpg" alt="사진 34" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/B1_251231.jpg" alt="사진 35" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/13_260110.jpg" alt="사진 36" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/C1_260114_1.jpg" alt="사진 37" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/D1_260114_2.jpg" alt="사진 38" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/14_260117.JPG" alt="사진 39" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/E1_260117_1.jpg" alt="사진 40" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/F1_260117_2.jpg" alt="사진 41" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/G1_260117_3.jpg" alt="사진 42" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/H1_260117_4.jpg" alt="사진 43" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/15_260117.JPG" alt="사진 44" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/16_260117.JPG" alt="사진 45" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/17_260117.jpg" alt="사진 46" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/18_260117.JPG" alt="사진 47" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/19_260221.JPG" alt="사진 48" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/I1_260418_1.jpg" alt="사진 49" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/J1_260418_2.jpg" alt="사진 50" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/K1_260516_1.jpg" alt="사진 51" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/L1_260516_2.jpg" alt="사진 52" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/M1_260716.jpg" alt="사진 53" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/heart.png" alt="사진 54" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/20_260110.JPG" alt="사진 55" loading="lazy"></figure>
+      <figure class="photo-card"><img src="images/21_260222.JPG" alt="사진 56" loading="lazy"></figure>
     </div>
   </section>
 
@@ -98,7 +131,7 @@
   <!-- ===== 4. 메시지 모음 ===== -->
   <section class="messages" id="messages">
     <h2 class="section-title">우리들의 한마디</h2>
-    <p class="section-desc">함께했던 사람들이 남긴 짧은 인사</p>
+    <p class="section-desc">형제자매들이 남긴 짧은 인사</p>
     <div class="message-wall" id="messageWall"></div>
   </section>
 

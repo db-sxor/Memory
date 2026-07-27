@@ -54,13 +54,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== 3. 배경음악 토글 기능 =====
   const bgm = document.getElementById("bgm");
   const musicToggle = document.getElementById("musicToggle");
 
+  // 🎵 5개의 음악 파일 경로 목록
+  const playlist = [
+    "audio/song1.mp3",
+    "audio/song2.mp3",
+    "audio/song3.mp3",
+    "audio/song4.mp3",
+    "audio/song5.mp3"
+  ];
+
+  let currentSongIndex = -1;
+
+  // 랜덤으로 노래를 선택하는 함수 (바로 직전에 나온 노래는 연속으로 나오지 않게 처리)
+  function setRandomSong() {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * playlist.length);
+    } while (newIndex === currentSongIndex && playlist.length > 1);
+
+    currentSongIndex = newIndex;
+    if (bgm) {
+      bgm.src = playlist[currentSongIndex];
+    }
+  }
+
+  // 처음 페이지 로드 시 첫 랜덤 곡 세팅
+  setRandomSong();
+
+  // 노래 한 곡이 끝나면 다음 곡을 자동으로 랜덤 선택해서 계속 재생
+  if (bgm) {
+    bgm.addEventListener("ended", () => {
+      setRandomSong();
+      bgm.play();
+    });
+  }
+
+  // 음악 재생 / 정지 토글 버튼 이벤트
   if (bgm && musicToggle) {
     musicToggle.addEventListener("click", () => {
       if (bgm.paused) {
+        // 음원이 안 적혀있으면 랜덤 곡 지정
+        if (!bgm.src) setRandomSong();
+        
         bgm.play();
         musicToggle.classList.add("playing");
       } else {
