@@ -147,3 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const tooltip = document.getElementById('musicTooltip');
+
+  if (tooltip) {
+    setTimeout(() => {
+      tooltip.classList.add('fade-out');
+    }, 5000);
+  }
+});

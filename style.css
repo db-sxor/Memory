@@ -124,9 +124,9 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
 
 /* ===== GALLERY ===== */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.2rem;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0.5rem;
 }
 .photo-card {
   overflow: hidden;
@@ -241,6 +241,49 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .music-toggle.playing { background: var(--rose); }
+
+.music-tooltip {
+  position: absolute;
+  bottom: 130%; 
+  right: 0;               /* 오른쪽 끝 기준으로 정렬 (밖으로 나가는 현상 방지) */
+  left: auto;             /* 기존 중앙 정렬 해제 */
+  transform: none;        /* 기존 중앙 정렬 해제 */
+  
+  background-color: #222222;
+  color: #ffffff;
+  
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 꼬리표 위치: 오른쪽 밑으로 이동 */
+.music-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 15px;            /* 오른쪽 끝에서 15px 안쪽에 꼬리표 배치 */
+  left: auto;             /* 기존 중앙 정렬 해제 */
+  transform: none;        /* 기존 중앙 정렬 해제 */
+  border-width: 8px;
+  border-style: solid;
+  border-color: #222222 transparent transparent transparent;
+}
+
+/* 3초 후 사라짐 클래스 */
+.music-tooltip.fade-out {
+  opacity: 0;
+  transform: translateY(6px);
+}
 
 @media (max-width: 600px) {
   section { padding: 3.5rem 1.2rem; }
