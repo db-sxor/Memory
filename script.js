@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messages = [
     { name: "강기준", text: "" },
     { name: "강승식", text: "" },
-    { name: "강호동", text: "" },
+    { name: "강호동", text: "차형제 부부가 회중을 위해 노력한 일들을 그 누구보다 여호와께서 잘 아실거에요. 많은 축복도 있었겠죠? 고양수어 회중에도 좋은 영향력을 주어 많은 사랑 받는 부부가 되길 바래요" },
     { name: "권미애", text: "" },
     { name: "김동훈", text: "다시 돌아와 만날때까지~안녕히!" },
     { name: "김보배", text: "" },
@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "김현아", text: "" },
     { name: "김현정", text: "" },
     { name: "나용성", text: "" },
-    { name: "나하나", text: "" },
+    { name: "나하나", text: "현채이모와 차형제가 함께했던 회중생활은 한층더 즐겁고 활기찼던 것 같아요!! 언제나 감사했고 새 회중에서도 그 에너지는 누구나 느낄 수 있을 거에요💕 화이팅!!" },
     { name: "노경섭", text: "" },
     { name: "명미경", text: "" },
     { name: "박수정", text: "" },
     { name: "박혜정", text: "귀엽고 야무진 현채!! 어딜 가서도 잘할거라 믿어~^^" },
     { name: "송현경", text: "" },
     { name: "양상록", text: "" },
-    { name: "오숙희", text: "" },
+    { name: "오숙희", text: "내 아들같고 내 딸같은 차진주형제 송현채자매부부 그동안 수고많으셨습니다 우린 가족이니까 다시 만날날을 기대합니다 어디에 있든지 여호와의 축복이 차형제부부에게 넘치기를 기도합니다♡♡" },
     { name: "윤정환", text: "" },
     { name: "이선희", text: "" },
     { name: "이유빈", text: "" },
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (scrollBtn) {
     scrollBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      const target = document.getElementById("timeline");
+      const target = document.getElementById("gallery");
       if (!target) return;
 
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
