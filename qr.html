@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR 코드</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    .qr-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .qr-card {
+      background: var(--paper-deep);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 360px;
+      width: 100%;
+    }
+    #qrcode img {
+      margin: 0 auto;
+      padding: 12px;
+      background: white;
+      border-radius: 8px;
+    }
+    .url-text {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      word-break: break-all;
+    }
+    .download-btn {
+      background: var(--ink);
+      color: var(--paper);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: var(--rose);
+    }
+  </style>
+</head>
+<body>
+  <div class="qr-container">
+    <div class="qr-card">
+      <h2 style="color: var(--ink);">웹사이트 QR 코드</h2>
+      <div id="qrcode"></div>
+      <p class="url-text" id="targetUrl"></p>
+      <button id="downloadBtn" class="download-btn">QR 코드 이미지 저장</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const originUrl = window.location.origin + window.location.pathname.replace('/qr.html', '/');
+      document.getElementById('targetUrl').textContent = originUrl;
+
+      const qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: originUrl,
+        width: 200,
+        height: 200,
+        correctLevel : QRCode.CorrectLevel.H
+      });
+
+      document.getElementById('downloadBtn').addEventListener('click', () => {
+        const qrImage = document.querySelector('#qrcode img');
+        if (qrImage) {
+          const link = document.createElement('a');
+          link.href = qrImage.src;
+          link.download = 'site_qrcode.png';
+          link.click();
+        } else {
+          alert("QR 코드를 불러오는 중입니다. 잠시 후 다시 시도해주세요.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
