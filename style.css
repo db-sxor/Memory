@@ -289,8 +289,9 @@ section { padding: 5rem 1.5rem; max-width: 1000px; margin: 0 auto; }
   transform: translateY(6px);
 }
 
+.mb-br { display: none; }
+
 @media (max-width: 600px) {
   section { padding: 3.5rem 1.2rem; }
-
-  .hero-desc { font-size: 0.9rem; }
+  .mb-br { display: inline; }
 }
